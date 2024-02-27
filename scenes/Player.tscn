@@ -4,16 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://b0gq0fhav8gtl" path="res://assets/redbull.png" id="1_mhnl6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hf7t7"]
-size = Vector2(204.5, 66)
+size = Vector2(92.625, 30)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_jdumy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1, 1)
-scale = Vector2(0.502, 0.502)
+position = Vector2(-1.90735e-06, -1.90735e-06)
+scale = Vector2(0.2285, 0.2285)
 texture = ExtResource("1_mhnl6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.25, -1)
+position = Vector2(0.6875, -1)
 shape = SubResource("RectangleShape2D_hf7t7")
