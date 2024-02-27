@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://c27yga81jdgev"]
+
+[ext_resource type="Texture2D" uid="uid://bvipwlguiw4a6" path="res://assets/restart.png" id="1_50tku"]
+[ext_resource type="Script" path="res://scenes/Reset.gd" id="1_hphn5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5f3qm"]
+texture = ExtResource("1_50tku")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_36n1f"]
+texture = ExtResource("1_50tku")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_miqfv"]
+texture = ExtResource("1_50tku")
+
+[node name="Reset" type="CanvasLayer"]
+script = ExtResource("1_hphn5")
+
+[node name="RestartButton" type="Button" parent="."]
+offset_left = 342.0
+offset_top = 350.0
+offset_right = 502.0
+offset_bottom = 413.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_5f3qm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_36n1f")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_miqfv")
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
