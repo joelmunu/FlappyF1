@@ -40,6 +40,13 @@ func _input(event):
 					if $Player.flying:
 						$Player.flap()
 						check_top()
+		if Input.is_action_just_pressed("ui_accept"):
+			if game_running == false:
+					start_game()
+			else:
+				if $Player.flying:
+					$Player.flap()
+					check_top()
 						
 func start_game():
 	game_running = true
