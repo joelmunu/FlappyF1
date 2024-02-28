@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://p5dc8qrc1r1n"]
+[gd_scene load_steps=8 format=3 uid="uid://p5dc8qrc1r1n"]
 
 [ext_resource type="Texture2D" uid="uid://wmvh6rad7isr" path="res://assets/background/background.jpeg" id="1_2s82w"]
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_b3g7k"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://qidwvavpxehf" path="res://scenes/Ground.tscn" id="4_6tshf"]
 [ext_resource type="PackedScene" uid="uid://bw2gymky80ky5" path="res://scenes/Pipe.tscn" id="5_0m3jj"]
 [ext_resource type="PackedScene" uid="uid://c27yga81jdgev" path="res://scenes/Reset.tscn" id="6_22dcb"]
+[ext_resource type="AudioStream" uid="uid://klp8s2vnck2n" path="res://assets/sound/voxvox.mp3" id="7_uepb7"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_b3g7k")
@@ -43,6 +44,11 @@ theme_override_font_sizes/font_size = 23
 text = "SCORE: 0"
 
 [node name="Reset" parent="." instance=ExtResource("6_22dcb")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_uepb7")
+
+[node name="ReturnToMenu" type="CanvasLayer" parent="."]
 
 [connection signal="body_entered" from="Ground" to="." method="_on_ground_body_entered"]
 [connection signal="hit" from="Ground" to="." method="_on_ground_hit"]

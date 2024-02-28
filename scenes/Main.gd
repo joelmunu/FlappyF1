@@ -83,10 +83,12 @@ func scored():
 func check_top():
 	if $Player.position.y < 0:
 		$Player.falling = true
+		$AudioStreamPlayer2D.play()
 		stop_game()
 		
 func player_hit():
 	$Player.falling = true
+	$AudioStreamPlayer2D.play()
 	stop_game()
 	
 func stop_game():
@@ -98,9 +100,10 @@ func stop_game():
 	
 func _on_ground_body_entered(body):
 	$Player.falling = false
+	$AudioStreamPlayer2D.play()
 	stop_game()
 
 
 func _on_reset_restart():
 	new_game()
-	
+

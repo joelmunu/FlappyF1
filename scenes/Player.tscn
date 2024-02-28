@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://6pafh6aenlqg"]
+[gd_scene load_steps=5 format=3 uid="uid://6pafh6aenlqg"]
 
 [ext_resource type="Script" path="res://scenes/Player.gd" id="1_jdumy"]
 [ext_resource type="Texture2D" uid="uid://b0gq0fhav8gtl" path="res://assets/redbull.png" id="1_mhnl6"]
+[ext_resource type="AudioStream" uid="uid://ckhy2w4s3g27p" path="res://assets/sound/jumpSound.mp3" id="3_emmou"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hf7t7"]
 size = Vector2(92.625, 30)
@@ -17,3 +18,6 @@ texture = ExtResource("1_mhnl6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.6875, -1)
 shape = SubResource("RectangleShape2D_hf7t7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_emmou")
