@@ -1,0 +1,93 @@
+[gd_scene load_steps=17 format=3 uid="uid://csosb8sli2ksf"]
+
+[ext_resource type="Texture2D" uid="uid://wmvh6rad7isr" path="res://assets/background/background.jpeg" id="1_ktbh1"]
+[ext_resource type="Script" path="res://scenes/Menu.gd" id="1_kybbp"]
+[ext_resource type="Texture2D" uid="uid://cf5skt7rorcid" path="res://assets/easybtn.png" id="2_wwni0"]
+[ext_resource type="Texture2D" uid="uid://cx3cy8s3fq8xd" path="res://assets/hardbtn.png" id="3_1rgcw"]
+[ext_resource type="Texture2D" uid="uid://bxffmhhpgpehd" path="res://assets/exitbtn.png" id="4_cm2ji"]
+[ext_resource type="Texture2D" uid="uid://cf5451d27kgau" path="res://assets/flappyf1logo.png" id="5_pxx6q"]
+[ext_resource type="AudioStream" uid="uid://bnugictbe8w0r" path="res://assets/sound/OST.mp3" id="7_lah42"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wgue1"]
+texture = ExtResource("2_wwni0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sgbr3"]
+texture = ExtResource("2_wwni0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rv2e2"]
+texture = ExtResource("2_wwni0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4neio"]
+texture = ExtResource("3_1rgcw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cseu7"]
+texture = ExtResource("3_1rgcw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b8pvr"]
+texture = ExtResource("3_1rgcw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_45md0"]
+texture = ExtResource("4_cm2ji")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wnmm7"]
+texture = ExtResource("4_cm2ji")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6v1np"]
+texture = ExtResource("4_cm2ji")
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kybbp")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(23, 97)
+texture = ExtResource("1_ktbh1")
+offset = Vector2(432, 384)
+
+[node name="EasyButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 400.0
+offset_right = 369.0
+offset_bottom = 509.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_wgue1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_sgbr3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rv2e2")
+
+[node name="HardButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 400.0
+offset_right = 756.0
+offset_bottom = 509.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_4neio")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cseu7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b8pvr")
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 575.0
+offset_right = 563.0
+offset_bottom = 684.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_45md0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wnmm7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6v1np")
+
+[node name="Flappyf1Logo" type="Sprite2D" parent="."]
+position = Vector2(433, 201)
+scale = Vector2(0.691667, 0.691667)
+texture = ExtResource("5_pxx6q")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_lah42")
+autoplay = true
+
+[connection signal="pressed" from="EasyButton" to="." method="_on_easy_button_pressed"]
+[connection signal="pressed" from="HardButton" to="." method="_on_hard_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

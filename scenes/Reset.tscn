@@ -1,0 +1,47 @@
+[gd_scene load_steps=10 format=3 uid="uid://c27yga81jdgev"]
+
+[ext_resource type="Texture2D" uid="uid://bvipwlguiw4a6" path="res://assets/restart.png" id="1_50tku"]
+[ext_resource type="Script" path="res://scenes/Reset.gd" id="1_hphn5"]
+[ext_resource type="Texture2D" uid="uid://dkstb0rn5d0xq" path="res://assets/menubtn.png" id="3_5gxjw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5f3qm"]
+texture = ExtResource("1_50tku")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_36n1f"]
+texture = ExtResource("1_50tku")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_miqfv"]
+texture = ExtResource("1_50tku")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gni8n"]
+texture = ExtResource("3_5gxjw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jh3gi"]
+texture = ExtResource("3_5gxjw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nm0jy"]
+texture = ExtResource("3_5gxjw")
+
+[node name="Reset" type="CanvasLayer"]
+script = ExtResource("1_hphn5")
+
+[node name="RestartButton" type="Button" parent="."]
+offset_left = 342.0
+offset_top = 350.0
+offset_right = 502.0
+offset_bottom = 413.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_5f3qm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_36n1f")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_miqfv")
+
+[node name="MenuButton" type="Button" parent="."]
+offset_left = 343.0
+offset_top = 429.0
+offset_right = 503.0
+offset_bottom = 492.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_gni8n")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jh3gi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nm0jy")
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
