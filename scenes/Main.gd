@@ -6,12 +6,12 @@ var game_running : bool
 var game_over : bool
 var scroll
 var score
-const SCROLL_SPEED : int = 4
+const SCROLL_SPEED : int = 400
 var screen_size : Vector2i
 var ground_height : int
 var pipes : Array
-const PIPE_DELAY : int = 100
-const PIPE_RANGE : int = 200
+const PIPE_DELAY : int = 10
+const PIPE_RANGE : int = 20
 
 func _ready():
 	screen_size = get_window().size
